@@ -60,13 +60,11 @@ document.querySelectorAll('.card').forEach(c=>{
 c.style.display=c.dataset.name.includes(q)?'block':'none';
 });
 }
-
 function order(product, price) {
   const message = "Assalam o Alaikum! Mujhe " + product + " order karna hai. Price: Rs. " + price;
   const url = "https://wa.me/923056828873?text=" + encodeURIComponent(message);
   window.location.href = url;
 }
-
 </script>
 </body>
 </html>
