@@ -180,5 +180,191 @@ function searchItems(){
   return false;
 }
 </script>
-</body>
+</<!-- JDS & SONS Accessories: 50 Products -->
+<style>
+#jds-catalog {
+  font-family: Arial, sans-serif;
+  padding: 18px 10px;
+  background: #fff;
+  color: #222;
+}
+#jds-catalog h2 {
+  text-align: center;
+  color: #e65b16;
+}
+#jds-catalog .jds-intro {
+  text-align: center;
+  font-size: 14px;
+}
+#jds-search {
+  display: block;
+  width: 95%;
+  max-width: 500px;
+  margin: 16px auto;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+#jds-products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+#jds-products .jds-item {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 12px 7px;
+  text-align: center;
+  box-shadow: 0 2px 5px #0000000d;
+}
+#jds-products .jds-emoji {
+  font-size: 38px;
+  margin: 6px;
+}
+#jds-products h3 {
+  font-size: 14px;
+  min-height: 34px;
+  margin: 7px 0;
+}
+#jds-products p {
+  font-size: 12px;
+  color: #666;
+}
+#jds-products .jds-order {
+  display: block;
+  background: #168b45;
+  color: white;
+  padding: 10px 4px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+#jds-count {
+  text-align: center;
+  font-size: 13px;
+  margin: 12px;
+}
+@media (min-width: 600px) {
+  #jds-products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+</style>
+
+<section id="jds-catalog">
+  <h2>📱 Mobile Accessories</h2>
+  <p class="jds-intro">
+    JDS & SONS Accessories — Apni pasand ka product WhatsApp par order karein.
+  </p>
+
+  <input
+    id="jds-search"
+    type="search"
+    placeholder="Product search karein..."
+    oninput="jdsFilterProducts()"
+  >
+
+  <p id="jds-count">50 products</p>
+  <div id="jds-products"></div>
+</section>
+
+<script>
+(function () {
+  const products = [
+    ["Mobile Back Cover","📱"],
+    ["Transparent Phone Case","📲"],
+    ["Shockproof Cover","🛡️"],
+    ["Silicone Cover","📱"],
+    ["Leather Phone Case","👜"],
+    ["Screen Protector","🛡️"],
+    ["Tempered Glass","✨"],
+    ["Camera Lens Protector","📷"],
+    ["Privacy Screen Protector","🔒"],
+    ["USB-C Cable","🔌"],
+    ["Micro USB Cable","🔌"],
+    ["Lightning Cable","⚡"],
+    ["Fast Charging Cable","⚡"],
+    ["USB-C Charger","🔋"],
+    ["Fast Wall Charger","🔌"],
+    ["Car Charger","🚗"],
+    ["Wireless Charger","📡"],
+    ["Power Bank","🔋"],
+    ["Mini Power Bank","🔋"],
+    ["Wireless Power Bank","⚡"],
+    ["Wired Earphones","🎧"],
+    ["Bluetooth Earbuds","🎧"],
+    ["Wireless Headphones","🎧"],
+    ["Gaming Headphones","🎮"],
+    ["Bluetooth Speaker","🔊"],
+    ["Mini Portable Speaker","🔉"],
+    ["Phone Holder","📱"],
+    ["Car Phone Mount","🚘"],
+    ["Desk Phone Stand","🪑"],
+    ["Tripod Stand","📸"],
+    ["Selfie Stick","🤳"],
+    ["Ring Light","💡"],
+    ["Phone Cooling Fan","❄️"],
+    ["Mobile Gaming Trigger","🎮"],
+    ["Phone Game Controller","🕹️"],
+    ["OTG Adapter","🔗"],
+    ["USB-C Hub","🔌"],
+    ["Card Reader","💾"],
+    ["Memory Card","💾"],
+    ["USB Flash Drive","📁"],
+    ["SIM Ejector Tool","📌"],
+    ["Phone Lanyard","📿"],
+    ["Wrist Phone Strap","📿"],
+    ["Waterproof Phone Pouch","💧"],
+    ["Phone Cleaning Kit","🧽"],
+    ["Cable Protector","🛡️"],
+    ["Charging Dock","🔋"],
+    ["Smartwatch","⌚"],
+    ["Smartwatch Strap","⌚"],
+    ["Fitness Band","🏃"]
+  ];
+
+  const container = document.getElementById("jds-products");
+
+  container.innerHTML = products.map(function (product, index) {
+    const name = product[0];
+    const emoji = product[1];
+    const message = "Assalam-o-Alaikum! Mujhe " + name +
+      " order karna hai. Price aur availability batayein.";
+    const link = "https://wa.me/923056828873?text=" +
+      encodeURIComponent(message);
+
+    return `
+      <article class="jds-item">
+        <div class="jds-emoji">${emoji}</div>
+        <h3>${name}</h3>
+        <p>Price WhatsApp par maloom karein</p>
+        <a class="jds-order"
+           href="${link}"
+           target="_blank"
+           rel="noopener">
+          WhatsApp Order
+        </a>
+      </article>
+    `;
+  }).join("");
+
+  window.jdsFilterProducts = function () {
+    const query = document.getElementById("jds-search")
+      .value.toLowerCase();
+    let count = 0;
+
+    container.querySelectorAll(".jds-item").forEach(function (item) {
+      const matches = item.innerText.toLowerCase().includes(query);
+      item.style.display = matches ? "" : "none";
+      if (matches) count++;
+    });
+
+    document.getElementById("jds-count").textContent =
+      count + " products found";
+  };
+})();
+</script>
+  body>
 </html>
