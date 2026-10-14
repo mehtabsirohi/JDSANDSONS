@@ -4,170 +4,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101c36">
-<title>TechTrolley | Mobile Accessories</title>
+<meta name="theme-color" content="#101828">
+<title>TechTrolley | Smart Accessories</title>
 <style>
 *{box-sizing:border-box}
-:root{--navy:#101c36;--blue:#2458d3;--green:#128c51;--bg:#f4f7fc}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#172033}
-header{background:var(--navy);color:white;padding:22px 16px}
-.top{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+:root{--dark:#101828;--blue:#2563eb;--green:#16a34a;--bg:#f4f7fb}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#182235}
+header{background:var(--dark);color:white;padding:18px 16px}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .logo{font-size:25px;font-weight:800}
-.logo span{color:#8eb5ff}
-.tag{font-size:12px;color:#d2ddf5;margin-top:5px}
-nav{display:flex;gap:16px}
-nav a{color:white;text-decoration:none;font-size:14px}
-.hero{padding:42px 18px 32px;background:linear-gradient(135deg,#e3edff,#f8faff);text-align:center}
-.hero h1{font-size:clamp(27px,5vw,42px);margin:0 0 12px}
-.hero p{color:#586780;line-height:1.6;margin:0 auto;max-width:520px}
-.search{display:block;width:100%;max-width:480px;margin:22px auto 0;padding:14px 16px;border:1px solid #d6deeb;border-radius:12px;font-size:16px;background:white;outline-color:var(--blue)}
-.wrap{max-width:1050px;margin:auto;padding:26px 16px 38px}
-.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
-.section-head h2{margin:0;font-size:23px}
-.section-head p{font-size:13px;color:#68758a;margin:6px 0 0}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.card{background:white;border:1px solid #e7ebf3;border-radius:16px;padding:13px;text-align:center;box-shadow:0 4px 16px #16294d09;min-width:0}
-.pic{height:112px;border-radius:12px;background:#eef3ff;display:flex;align-items:center;justify-content:center;font-size:54px}
+.logo span{color:#60a5fa}
+.nav a{color:white;text-decoration:none;font-size:13px;margin-left:10px}
+.hero{background:linear-gradient(135deg,#172554,#2563eb);color:white;padding:48px 18px;text-align:center}
+.hero h1{font-size:clamp(29px,6vw,46px);margin:0 0 14px}
+.hero p{max-width:520px;margin:auto;line-height:1.7;color:#e1eaff}
+.search{width:100%;max-width:480px;padding:15px;margin-top:23px;border:0;border-radius:12px;font-size:16px}
+.wrap{max-width:1100px;margin:auto;padding:28px 15px}
+.heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.heading h2{margin:0;font-size:25px}
+.heading p{font-size:13px;color:#6b7280}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{background:white;border:1px solid #e5eaf2;border-radius:17px;padding:13px;box-shadow:0 5px 18px #1725540c;min-width:0}
+.picture{height:120px;display:flex;align-items:center;justify-content:center;background:#eff5ff;border-radius:13px;font-size:57px}
 .card h3{font-size:15px;margin:14px 0 8px}
-.price{font-size:20px;font-weight:800;color:var(--navy);margin:0 0 13px}
-.price small{font-size:11px;color:#78849a;font-weight:400}
-.order{display:block;width:100%;padding:12px 6px;border-radius:9px;background:var(--green);color:white;text-decoration:none;font-weight:700;font-size:13px}
-.order:active{opacity:.8}
-.empty{grid-column:1/-1;text-align:center;padding:30px;color:#68758a;display:none}
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
-.benefit{background:white;border:1px solid #e7ebf3;border-radius:12px;padding:15px 7px;text-align:center;font-size:12px;color:#526078}
-.benefit strong{display:block;font-size:20px;margin-bottom:7px}
-.contact{background:#e5edff;border-radius:16px;padding:24px 16px;text-align:center;margin-top:28px}
-.contact h2{margin:0 0 9px}
-.contact p{color:#56647b;font-size:14px;line-height:1.6}
-.contact .order{max-width:300px;margin:15px auto 0}
-footer{background:var(--navy);color:#d8e2f5;text-align:center;padding:23px 14px;font-size:13px;line-height:1.8}
+.price{font-size:21px;font-weight:800;margin:0 0 13px;color:#172554}
+.order{display:block;text-align:center;background:var(--green);color:white;padding:12px 5px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px}
+.order:hover{background:#15803d}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.info div{background:white;border-radius:12px;padding:15px 5px;text-align:center;font-size:12px;color:#4b5563}
+.info b{display:block;font-size:23px;margin-bottom:7px}
+.contact{margin-top:28px;background:#dbeafe;padding:25px 15px;text-align:center;border-radius:17px}
+.contact h2{margin-top:0}
+.contact p{color:#475569;line-height:1.6}
+.contact .order{max-width:300px;margin:15px auto}
+footer{background:var(--dark);color:#cbd5e1;text-align:center;padding:25px 15px;font-size:13px;line-height:1.8}
 footer strong{color:white}
-@media(min-width:650px){
- .products{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
- .card{padding:17px}
- .pic{height:145px;font-size:65px}
- .wrap{padding-top:34px}
-}
-@media(max-width:380px){
- .logo{font-size:21px}
- nav{gap:9px}
- nav a{font-size:12px}
- .benefit{font-size:11px}
-}
+.hidden{display:none}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{padding:17px}.picture{height:155px;font-size:70px}.wrap{padding-top:38px}}
 </style>
 </head>
 <body>
 <header>
- <div class="top">
-  <div>
-   <div class="logo">🛒 Tech<span>Trolley</span></div>
-   <div class="tag">SMART ACCESSORIES. SMART PRICES.</div>
-  </div>
-  <nav>
-   <a href="#home">Home</a>
-   <a href="#products">Products</a>
-   <a href="#contact">Contact</a>
-  </nav>
+ <div class="nav">
+  <div class="logo">🛒 Tech<span>Trolley</span></div>
+  <nav><a href="#home">Home</a><a href="#products">Products</a><a href="#contact">Contact</a></nav>
  </div>
 </header>
 
 <section class="hero" id="home">
- <h1>Upgrade Your Phone Experience</h1>
- <p>Discover useful mobile accessories at affordable prices. Choose your product and order directly on WhatsApp.</p>
- <input class="search" id="search" type="search"
- placeholder="🔍 Search products..." aria-label="Search products">
+ <h1>Smart Accessories. Smart Prices.</h1>
+ <p>Upgrade your everyday phone experience with useful mobile accessories at affordable prices. Order easily through WhatsApp.</p>
+ <input class="search" id="search" type="search" placeholder="🔎 Search products..." aria-label="Search products">
 </section>
 
 <main class="wrap">
- <div class="section-head" id="products">
-  <div>
-   <h2>Our Products</h2>
-   <p>Choose your favourite accessory</p>
-  </div>
+ <div class="heading" id="products">
+  <div><h2>Our Products</h2><p>Choose your favourite accessory</p></div>
  </div>
 
- <section class="products" id="product-list">
+ <section class="grid" id="grid">
   <article class="card" data-name="mobile stand">
-   <div class="pic">📱</div>
-   <h3>Mobile Stand</h3>
+   <div class="picture">📱</div><h3>Mobile Stand</h3>
    <p class="price">Rs. 299</p>
-   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Mobile%20Stand%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20Mobile%20Stand%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
   </article>
-
   <article class="card" data-name="phone cover">
-   <div class="pic">📲</div>
-   <h3>Phone Cover</h3>
+   <div class="picture">📲</div><h3>Phone Cover</h3>
    <p class="price">Rs. 299</p>
-   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Phone%20Cover%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20Phone%20Cover%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
   </article>
-
   <article class="card" data-name="charging cable">
-   <div class="pic">🔌</div>
-   <h3>Charging Cable</h3>
+   <div class="picture">🔌</div><h3>Charging Cable</h3>
    <p class="price">Rs. 349</p>
-   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Charging%20Cable%20for%20Rs.%20349." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20Charging%20Cable%20for%20Rs.%20349." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
   </article>
-
   <article class="card" data-name="wired earphones">
-   <div class="pic">🎧</div>
-   <h3>Wired Earphones</h3>
+   <div class="picture">🎧</div><h3>Wired Earphones</h3>
    <p class="price">Rs. 499</p>
-   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Wired%20Earphones%20for%20Rs.%20499." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20Wired%20Earphones%20for%20Rs.%20499." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
   </article>
-
   <article class="card" data-name="phone ring holder">
-   <div class="pic">⭕</div>
-   <h3>Phone Ring Holder</h3>
+   <div class="picture">⭕</div><h3>Phone Ring Holder</h3>
    <p class="price">Rs. 199</p>
-   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Phone%20Ring%20Holder%20for%20Rs.%20199." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20Phone%20Ring%20Holder%20for%20Rs.%20199." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
   </article>
-
   <article class="card" data-name="cable organizer">
-   <div class="pic">🔗</div>
-   <h3>Cable Organizer</h3>
+   <div class="picture">🔗</div><h3>Cable Organizer</h3>
    <p class="price">Rs. 229</p>
-   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Cable%20Organizer%20for%20Rs.%20229." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20order%20Cable%20Organizer%20for%20Rs.%20229." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
   </article>
-  <div class="empty" id="empty">No products found. Try another search.</div>
  </section>
 
- <section class="benefits">
-  <div class="benefit"><strong>📱</strong>Mobile Accessories</div>
-  <div class="benefit"><strong>💬</strong>Direct WhatsApp Orders</div>
-  <div class="benefit"><strong>🇵🇰</strong>Pakistan Store</div>
+ <section class="info">
+  <div><b>📱</b>Useful Accessories</div>
+  <div><b>💬</b>Easy WhatsApp Orders</div>
+  <div><b>🇵🇰</b>Pakistan Store</div>
  </section>
 
  <section class="contact" id="contact">
   <h2>Need Help Ordering?</h2>
-  <p>Have a question about a product? Contact TechTrolley directly on WhatsApp.</p>
-  <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20have%20a%20question%20about%20TechTrolley%20products." target="_blank" rel="noopener">Chat with Us on WhatsApp ↗</a>
+  <p>Have a question about a product? Contact us directly on WhatsApp.</p>
+  <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%2C%20I%20have%20a%20question%20about%20your%20products." target="_blank" rel="noopener">Chat With Us on WhatsApp ↗</a>
  </section>
 </main>
 
 <footer>
  <strong>🛒 TechTrolley</strong><br>
- Mobile Accessories | Pakistan<br>
- WhatsApp: 923056828873<br>
+ Smart Accessories. Smart Prices.<br>
  © 2026 TechTrolley. All rights reserved.
 </footer>
 
 <script>
-const search = document.getElementById("search");
-const cards = document.querySelectorAll(".card");
-const empty = document.getElementById("empty");
-
-search.addEventListener("input", function () {
- const query = this.value.toLowerCase().trim();
- let visible = 0;
-
- cards.forEach(function(card) {
-  const matches = card.dataset.name.includes(query);
-  card.style.display = matches ? "" : "none";
-  if (matches) visible++;
+const search = document.getElementById('search');
+const cards = document.querySelectorAll('.card');
+search.addEventListener('input', function(){
+ const term = this.value.toLowerCase().trim();
+ cards.forEach(card => {
+  card.classList.toggle('hidden', !card.dataset.name.includes(term));
  });
-
- empty.style.display = visible ? "none" : "block";
 });
 </script>
 </body>
