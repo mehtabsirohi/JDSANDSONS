@@ -3,157 +3,179 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechTrolley | Online Shopping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JDS & SONS Accessories | Online Store</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#333}
-.top{background:#f85606;color:white;padding:10px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.logo{font-size:25px;font-weight:bold}
-.search{display:flex;flex:1;max-width:650px}
-.search input{width:100%;padding:13px;border:0;border-radius:4px 0 0 4px;font-size:15px}
-.search button{border:0;background:#ffe1d2;padding:0 18px;color:#f85606;font-size:18px}
-.cart{font-size:15px}
-.subnav{background:#fff;padding:10px 4%;font-size:13px;color:#555}
-.container{max-width:1200px;margin:15px auto;padding:0 12px}
-.banner{background:linear-gradient(110deg,#ff7a18,#ffb347);color:white;border-radius:8px;padding:25px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-.banner h1{margin:0 0 10px;font-size:27px}
-.banner p{margin:0 0 15px}
-.banner a{display:inline-block;background:white;color:#f85606;padding:10px 17px;border-radius:4px;text-decoration:none;font-weight:bold}
-.banner .emoji{font-size:65px}
-.section-title{font-size:21px;font-weight:bold;margin:24px 0 12px}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.category{background:white;padding:16px 5px;text-align:center;border-radius:6px;font-size:13px}
-.category span{display:block;font-size:30px;margin-bottom:8px}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.product{background:white;border-radius:6px;overflow:hidden;padding-bottom:12px}
-.pic{height:135px;display:flex;align-items:center;justify-content:center;background:#fff3ec;font-size:65px}
-.info{padding:10px}
-.info h3{font-size:14px;line-height:1.4;height:38px;margin:0 0 8px}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#222}
+header{background:#f85606;color:white;padding:12px 4%;display:flex;gap:15px;align-items:center;flex-wrap:wrap}
+.logo{font-size:22px;font-weight:800}
+.search{display:flex;flex:1;min-width:180px}
+.search input{width:100%;padding:13px;border:0;outline:0;font-size:15px}
+.search button{border:0;background:#ffe2d2;color:#f85606;padding:0 16px;font-size:18px}
+.tagline{font-size:12px;margin-top:4px}
+.cart{font-weight:bold}
+nav{background:#fff;padding:12px 4%;display:flex;gap:20px;overflow:auto;white-space:nowrap;font-size:13px}
+nav a{color:#444;text-decoration:none}
+main{max-width:1200px;margin:auto;padding:14px}
+.hero{background:linear-gradient(120deg,#f85606,#ffad48);color:white;padding:25px 20px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hero h1{font-size:28px;margin:0 0 10px}
+.hero p{line-height:1.5}
+.hero .art{font-size:65px}
+.cta{display:inline-block;background:white;color:#f85606;padding:11px 17px;border-radius:4px;text-decoration:none;font-weight:bold}
+.heading{margin:23px 0 12px;font-size:20px;font-weight:bold}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.cat{background:white;border-radius:6px;text-align:center;padding:13px 3px;font-size:12px}
+.cat span{font-size:29px;display:block;margin-bottom:8px}
+.sale{background:#fff1e8;padding:12px;border-radius:5px;color:#e94d00;font-weight:bold}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{background:white;border-radius:6px;overflow:hidden}
+.photo{height:145px;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px}
+.photo img{width:100%;height:100%;object-fit:contain}
+.details{padding:10px}
+.name{font-size:14px;line-height:1.4;min-height:39px}
 .price{color:#f85606;font-size:19px;margin:8px 0}
 .old{font-size:12px;color:#888;text-decoration:line-through}
-.order{display:block;text-align:center;background:#f85606;color:white;text-decoration:none;padding:10px 5px;border-radius:4px;font-size:13px;margin-top:10px}
-footer{text-align:center;background:#fff;padding:24px 12px;margin-top:25px;font-size:13px;color:#666}
-@media(min-width:700px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}.categories{grid-template-columns:repeat(8,1fr)}.pic{height:180px}.banner h1{font-size:36px}}
+.order{display:block;background:#f85606;color:white;text-align:center;text-decoration:none;padding:11px 4px;border-radius:4px;font-size:12px;margin-top:10px}
+footer{background:#262626;color:#eee;text-align:center;padding:25px 12px;margin-top:25px;font-size:13px}
+footer a{color:#ffb58c}
+.empty{display:none;background:white;padding:20px;text-align:center}
+@media(min-width:700px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}.categories{grid-template-columns:repeat(8,1fr)}.photo{height:190px}.hero h1{font-size:36px}}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="logo">TechTrolley</div>
-  <form class="search" onsubmit="return searchProducts()">
-    <input id="searchBox" type="search" placeholder="Search mobile accessories and gadgets...">
-    <button type="submit">🔍</button>
+<header>
+  <div>
+    <div class="logo">JDS & SONS</div>
+    <div class="tagline">ACCESSORIES • EVERYDAY ESSENTIALS</div>
+  </div>
+  <form class="search" onsubmit="return searchItems()">
+    <input id="search" placeholder="Search products..." aria-label="Search products">
+    <button type="submit">⌕</button>
   </form>
-  <div class="cart">🛒 Shopping</div>
+  <div class="cart">🛍️ Shop</div>
 </header>
 
-<div class="subnav">Home　›　Electronics　›　Mobile Accessories</div>
+<nav>
+  <a href="#">Home</a>
+  <a href="#categories">Categories</a>
+  <a href="#deals">Special Deals</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<main class="container">
-  <section class="banner">
+<main>
+  <section class="hero">
     <div>
-      <h1>Big Deals, Small Prices!</h1>
-      <p>Shop your favourite gadgets at great prices.</p>
-      <a href="#products">Shop Now →</a>
+      <h1>Upgrade Your Everyday.</h1>
+      <p>Discover accessories that match your style and budget.</p>
+      <a class="cta" href="#products">Explore Products →</a>
     </div>
-    <div class="pic">
-  <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones" style="width:100%;height:135px;object-fit:contain;">
-    </div>
+    <div class="art">🎧📱</div>
   </section>
 
-  <div class="section-title">Categories</div>
+  <div class="heading" id="categories">Shop by Category</div>
   <section class="categories">
-    <div class="category"><span>🎧</span>Headphones</div>
-    <div class="category"><span>🔌</span>Chargers</div>
-    <div class="category"><span>📱</span>Phone Cases</div>
-    <div class="category"><span>⌚</span>Smart Watches</div>
-    <div class="category"><span>🔊</span>Speakers</div>
-    <div class="category"><span>🔋</span>Power Banks</div>
-    <div class="category"><span>🖱️</span>Accessories</div>
-    <div class="category"><span>🎮</span>Gaming</div>
+    <div class="cat"><span>🎧</span>Earphones</div>
+    <div class="cat"><span>🔌</span>Chargers</div>
+    <div class="cat"><span>📱</span>Phone Cases</div>
+    <div class="cat"><span>⌚</span>Watches</div>
+    <div class="cat"><span>🔋</span>Power Banks</div>
+    <div class="cat"><span>🔊</span>Speakers</div>
+    <div class="cat"><span>💻</span>Gadgets</div>
+    <div class="cat"><span>🎮</span>Gaming</div>
   </section>
 
-  <div class="section-title" id="products">Flash Sale ⚡</div>
-  <section class="products" id="productList">
+  <div class="heading" id="deals">🔥 Today's Deals</div>
+  <div class="sale">Great finds. Smart prices. Shop your favourites!</div>
 
-    <article class="product" data-name="wireless earbuds headphones">
-      <div class="pic">🎧</div>
-      <div class="info">
-        <h3>Wireless Bluetooth Earbuds</h3>
+  <div class="heading" id="products">Popular Products</div>
+  <section class="products" id="list">
+
+    <article class="card" data-name="wireless headphones earbuds">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones"></div>
+      <div class="details">
+        <div class="name">Wireless Headphones</div>
         <div class="price">Rs. 1,499</div>
-        <div class="old">Rs. 2,000</div>
-        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Wireless%20Bluetooth%20Earbuds." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <div class="old">Rs. 1,999</div>
+        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Wireless%20Headphones." target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
     </article>
 
-    <article class="product" data-name="charger fast charging adapter">
-      <div class="pic">🔌</div>
-      <div class="info">
-        <h3>Fast Charging Adapter</h3>
+    <article class="card" data-name="fast charger adapter">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=400" alt="Charging accessory"></div>
+      <div class="details">
+        <div class="name">Charging Accessory</div>
         <div class="price">Rs. 999</div>
-        <div class="old">Rs. 1,400</div>
-        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Fast%20Charging%20Adapter." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <div class="old">Rs. 1,299</div>
+        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Charging%20Accessory." target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
     </article>
 
-    <article class="product" data-name="phone case mobile cover">
-      <div class="pic">📱</div>
-      <div class="info">
-        <h3>Stylish Mobile Phone Case</h3>
+    <article class="card" data-name="mobile phone case cover">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1601593346740-925612772716?w=400" alt="Mobile accessory"></div>
+      <div class="details">
+        <div class="name">Mobile Accessory</div>
         <div class="price">Rs. 499</div>
-        <div class="old">Rs. 700</div>
-        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Mobile%20Phone%20Case." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <div class="old">Rs. 699</div>
+        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Mobile%20Accessory." target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
     </article>
 
-    <article class="product" data-name="smart watch wearable">
-      <div class="pic">⌚</div>
-      <div class="info">
-        <h3>Smart Watch</h3>
+    <article class="card" data-name="smart watch">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Watch"></div>
+      <div class="details">
+        <div class="name">Everyday Watch</div>
         <div class="price">Rs. 2,499</div>
-        <div class="old">Rs. 3,200</div>
-        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Smart%20Watch." target="_blank" rel="noopener">Order on WhatsApp</a>
+        <div class="old">Rs. 2,999</div>
+        <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Watch." target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
     </article>
 
-    <article class="product" data-name="power bank battery">
-      <div class="pic">🔋</div>
-      <div class="info">
-        <h3>Portable Power Bank</h3>
+    <article class="card" data-name="portable power bank">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400" alt="Power bank"></div>
+      <div class="details">
+        <div class="name">Portable Power Bank</div>
         <div class="price">Rs. 1,899</div>
-        <div class="old">Rs. 2,500</div>
+        <div class="old">Rs. 2,299</div>
         <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Power%20Bank." target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
     </article>
 
-    <article class="product" data-name="bluetooth speaker">
-      <div class="pic">🔊</div>
-      <div class="info">
-        <h3>Portable Bluetooth Speaker</h3>
+    <article class="card" data-name="bluetooth speaker">
+      <div class="photo"><img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400" alt="Speaker"></div>
+      <div class="details">
+        <div class="name">Bluetooth Speaker</div>
         <div class="price">Rs. 1,299</div>
-        <div class="old">Rs. 1,800</div>
+        <div class="old">Rs. 1,699</div>
         <a class="order" href="https://wa.me/923056828873?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20Bluetooth%20Speaker." target="_blank" rel="noopener">Order on WhatsApp</a>
       </div>
     </article>
 
   </section>
+  <div class="empty" id="empty">No matching products found.</div>
 </main>
 
-<footer>
-  <strong>TechTrolley</strong>
-  <p>Your online destination for mobile accessories.</p>
-  <p>Questions or orders? Contact us on WhatsApp.</p>
-  <p>© 2026 TechTrolley</p>
+<footer id="contact">
+  <h3>JDS & SONS Accessories</h3>
+  <p>Your style. Your gadgets. Your everyday essentials.</p>
+  <p>For orders and questions, contact us on WhatsApp.</p>
+  <p><a href="https://wa.me/923056828873" target="_blank" rel="noopener">Chat with us on WhatsApp</a></p>
+  <p>© 2026 JDS & SONS Accessories</p>
 </footer>
 
 <script>
-function searchProducts(){
-  const q=document.getElementById('searchBox').value.toLowerCase().trim();
-  document.querySelectorAll('.product').forEach(function(p){
-    const name=p.innerText.toLowerCase()+' '+(p.dataset.name||'');
-    p.style.display=name.includes(q)?'':'none';
+function searchItems(){
+  const query=document.getElementById('search').value.toLowerCase().trim();
+  const cards=document.querySelectorAll('.card');
+  let shown=0;
+  cards.forEach(card=>{
+    const match=(card.innerText+' '+card.dataset.name).toLowerCase().includes(query);
+    card.style.display=match?'':'none';
+    if(match) shown++;
   });
+  document.getElementById('empty').style.display=shown?'none':'block';
   document.getElementById('products').scrollIntoView({behavior:'smooth'});
   return false;
 }
