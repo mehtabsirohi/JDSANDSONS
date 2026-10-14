@@ -1,70 +1,174 @@
-<!DOCTYPE html><html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101c36">
 <title>TechTrolley | Mobile Accessories</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
-header{background:#10233f;color:white;padding:22px 16px;text-align:center}
-header h1{margin:0;font-size:30px}
-header p{margin:8px 0 0;color:#dbeafe}
-nav{background:#17365e;padding:13px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 12px;font-weight:bold}
-.hero{padding:38px 18px;text-align:center;background:#dceafe}
-.hero h2{font-size:27px;margin:0 0 10px}
-.hero p{color:#43536b}
-.search{display:block;width:90%;max-width:450px;margin:18px auto;padding:13px;border:1px solid #ccd5e1;border-radius:9px;font-size:16px}
-.products{padding:24px 14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:850px;margin:auto}
-.card{background:white;border-radius:12px;padding:17px 10px;text-align:center;box-shadow:0 2px 9px #0000000c}
-.pic{font-size:46px;background:#edf3fc;border-radius:10px;padding:18px 5px}
-.card h3{font-size:16px}
-.price{font-weight:bold;color:#087443;font-size:18px}
-button{border:0;border-radius:7px;padding:11px;background:#153d70;color:white;font-weight:bold;cursor:pointer}
-footer{text-align:center;background:#10233f;color:white;padding:22px}
-@media(min-width:600px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
+:root{--navy:#101c36;--blue:#2458d3;--green:#128c51;--bg:#f4f7fc}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#172033}
+header{background:var(--navy);color:white;padding:22px 16px}
+.top{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:25px;font-weight:800}
+.logo span{color:#8eb5ff}
+.tag{font-size:12px;color:#d2ddf5;margin-top:5px}
+nav{display:flex;gap:16px}
+nav a{color:white;text-decoration:none;font-size:14px}
+.hero{padding:42px 18px 32px;background:linear-gradient(135deg,#e3edff,#f8faff);text-align:center}
+.hero h1{font-size:clamp(27px,5vw,42px);margin:0 0 12px}
+.hero p{color:#586780;line-height:1.6;margin:0 auto;max-width:520px}
+.search{display:block;width:100%;max-width:480px;margin:22px auto 0;padding:14px 16px;border:1px solid #d6deeb;border-radius:12px;font-size:16px;background:white;outline-color:var(--blue)}
+.wrap{max-width:1050px;margin:auto;padding:26px 16px 38px}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px}
+.section-head h2{margin:0;font-size:23px}
+.section-head p{font-size:13px;color:#68758a;margin:6px 0 0}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{background:white;border:1px solid #e7ebf3;border-radius:16px;padding:13px;text-align:center;box-shadow:0 4px 16px #16294d09;min-width:0}
+.pic{height:112px;border-radius:12px;background:#eef3ff;display:flex;align-items:center;justify-content:center;font-size:54px}
+.card h3{font-size:15px;margin:14px 0 8px}
+.price{font-size:20px;font-weight:800;color:var(--navy);margin:0 0 13px}
+.price small{font-size:11px;color:#78849a;font-weight:400}
+.order{display:block;width:100%;padding:12px 6px;border-radius:9px;background:var(--green);color:white;text-decoration:none;font-weight:700;font-size:13px}
+.order:active{opacity:.8}
+.empty{grid-column:1/-1;text-align:center;padding:30px;color:#68758a;display:none}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+.benefit{background:white;border:1px solid #e7ebf3;border-radius:12px;padding:15px 7px;text-align:center;font-size:12px;color:#526078}
+.benefit strong{display:block;font-size:20px;margin-bottom:7px}
+.contact{background:#e5edff;border-radius:16px;padding:24px 16px;text-align:center;margin-top:28px}
+.contact h2{margin:0 0 9px}
+.contact p{color:#56647b;font-size:14px;line-height:1.6}
+.contact .order{max-width:300px;margin:15px auto 0}
+footer{background:var(--navy);color:#d8e2f5;text-align:center;padding:23px 14px;font-size:13px;line-height:1.8}
+footer strong{color:white}
+@media(min-width:650px){
+ .products{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+ .card{padding:17px}
+ .pic{height:145px;font-size:65px}
+ .wrap{padding-top:34px}
+}
+@media(max-width:380px){
+ .logo{font-size:21px}
+ nav{gap:9px}
+ nav a{font-size:12px}
+ .benefit{font-size:11px}
+}
 </style>
 </head>
 <body>
 <header>
-<h1>🛒 TechTrolley</h1>
-<p>Your Mobile Accessories Store</p>
+ <div class="top">
+  <div>
+   <div class="logo">🛒 Tech<span>Trolley</span></div>
+   <div class="tag">SMART ACCESSORIES. SMART PRICES.</div>
+  </div>
+  <nav>
+   <a href="#home">Home</a>
+   <a href="#products">Products</a>
+   <a href="#contact">Contact</a>
+  </nav>
+ </div>
 </header>
-<nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</nav>
+
 <section class="hero" id="home">
-<h2>Smart Accessories. Smart Prices.</h2>
-<p>Apne phone ke liye behtareen accessories dekhein!</p>
-<input class="search" id="search" placeholder="Product search karein..." oninput="filterProducts()">
+ <h1>Upgrade Your Phone Experience</h1>
+ <p>Discover useful mobile accessories at affordable prices. Choose your product and order directly on WhatsApp.</p>
+ <input class="search" id="search" type="search"
+ placeholder="🔍 Search products..." aria-label="Search products">
 </section>
-<section class="products" id="products">
-<div class="card" data-name="mobile stand"><div class="pic">📱</div><h3>Mobile Stand</h3><p class="price">Rs. 299</p><button onclick="order('Mobile Stand',299)">Order on WhatsApp</button></div>
-<div class="card" data-name="phone cover"><div class="pic">📲</div><h3>Phone Cover</h3><p class="price">Rs. 299</p><button onclick="order('Phone Cover',299)">Order on WhatsApp</button></div>
-<div class="card" data-name="charging cable"><div class="pic">🔌</div><h3>Charging Cable</h3><p class="price">Rs. 349</p><button onclick="order('Charging Cable',349)">Order on WhatsApp</button></div>
-<div class="card" data-name="earphones"><div class="pic">🎧</div><h3>Wired Earphones</h3><p class="price">Rs. 499</p><button onclick="order('Wired Earphones',499)">Order on WhatsApp</button></div>
-<div class="card" data-name="ring holder"><div class="pic">⭕</div><h3>Phone Ring Holder</h3><p class="price">Rs. 199</p><button onclick="order('Phone Ring Holder',199)">Order on WhatsApp</button></div>
-<div class="card" data-name="cable organizer"><div class="pic">🔗</div><h3>Cable Organizer</h3><p class="price">Rs. 229</p><button onclick="order('Cable Organizer',229)">Order on WhatsApp</button></div>
-</section>
-<footer id="contact">
-<h3>TechTrolley</h3>
-<p>Mobile Accessories | Pakistan</p>
-<p>Order ke liye WhatsApp pe rabta kare 923056828873.</p>
+
+<main class="wrap">
+ <div class="section-head" id="products">
+  <div>
+   <h2>Our Products</h2>
+   <p>Choose your favourite accessory</p>
+  </div>
+ </div>
+
+ <section class="products" id="product-list">
+  <article class="card" data-name="mobile stand">
+   <div class="pic">📱</div>
+   <h3>Mobile Stand</h3>
+   <p class="price">Rs. 299</p>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Mobile%20Stand%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+  </article>
+
+  <article class="card" data-name="phone cover">
+   <div class="pic">📲</div>
+   <h3>Phone Cover</h3>
+   <p class="price">Rs. 299</p>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Phone%20Cover%20for%20Rs.%20299." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+  </article>
+
+  <article class="card" data-name="charging cable">
+   <div class="pic">🔌</div>
+   <h3>Charging Cable</h3>
+   <p class="price">Rs. 349</p>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Charging%20Cable%20for%20Rs.%20349." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+  </article>
+
+  <article class="card" data-name="wired earphones">
+   <div class="pic">🎧</div>
+   <h3>Wired Earphones</h3>
+   <p class="price">Rs. 499</p>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Wired%20Earphones%20for%20Rs.%20499." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+  </article>
+
+  <article class="card" data-name="phone ring holder">
+   <div class="pic">⭕</div>
+   <h3>Phone Ring Holder</h3>
+   <p class="price">Rs. 199</p>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Phone%20Ring%20Holder%20for%20Rs.%20199." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+  </article>
+
+  <article class="card" data-name="cable organizer">
+   <div class="pic">🔗</div>
+   <h3>Cable Organizer</h3>
+   <p class="price">Rs. 229</p>
+   <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20want%20to%20order%20Cable%20Organizer%20for%20Rs.%20229." target="_blank" rel="noopener">Order on WhatsApp ↗</a>
+  </article>
+  <div class="empty" id="empty">No products found. Try another search.</div>
+ </section>
+
+ <section class="benefits">
+  <div class="benefit"><strong>📱</strong>Mobile Accessories</div>
+  <div class="benefit"><strong>💬</strong>Direct WhatsApp Orders</div>
+  <div class="benefit"><strong>🇵🇰</strong>Pakistan Store</div>
+ </section>
+
+ <section class="contact" id="contact">
+  <h2>Need Help Ordering?</h2>
+  <p>Have a question about a product? Contact TechTrolley directly on WhatsApp.</p>
+  <a class="order" href="https://wa.me/923056828873?text=Assalam%20o%20Alaikum%21%20I%20have%20a%20question%20about%20TechTrolley%20products." target="_blank" rel="noopener">Chat with Us on WhatsApp ↗</a>
+ </section>
+</main>
+
+<footer>
+ <strong>🛒 TechTrolley</strong><br>
+ Mobile Accessories | Pakistan<br>
+ WhatsApp: 923056828873<br>
+ © 2026 TechTrolley. All rights reserved.
 </footer>
+
 <script>
-function filterProducts(){
-let q=document.getElementById('search').value.toLowerCase();
-document.querySelectorAll('.card').forEach(c=>{
-c.style.display=c.dataset.name.includes(q)?'block':'none';
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const empty = document.getElementById("empty");
+
+search.addEventListener("input", function () {
+ const query = this.value.toLowerCase().trim();
+ let visible = 0;
+
+ cards.forEach(function(card) {
+  const matches = card.dataset.name.includes(query);
+  card.style.display = matches ? "" : "none";
+  if (matches) visible++;
+ });
+
+ empty.style.display = visible ? "none" : "block";
 });
-}
-function order(product, price) {
-  const message = "Assalam o Alaikum! Mujhe " + product + " order karna hai. Price: Rs. " + price;
-  const url = "https://wa.me/923056828873?text=" + encodeURIComponent(message);
-  window.location.href = url;
-}
 </script>
 </body>
 </html>
