@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechTrolley | Mobile Accessories</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#10233f;color:white;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0;color:#dbeafe}
+nav{background:#17365e;padding:13px;text-align:center}
+nav a{color:white;text-decoration:none;margin:0 12px;font-weight:bold}
+.hero{padding:38px 18px;text-align:center;background:#dceafe}
+.hero h2{font-size:27px;margin:0 0 10px}
+.hero p{color:#43536b}
+.search{display:block;width:90%;max-width:450px;margin:18px auto;padding:13px;border:1px solid #ccd5e1;border-radius:9px;font-size:16px}
+.products{padding:24px 14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:850px;margin:auto}
+.card{background:white;border-radius:12px;padding:17px 10px;text-align:center;box-shadow:0 2px 9px #0000000c}
+.pic{font-size:46px;background:#edf3fc;border-radius:10px;padding:18px 5px}
+.card h3{font-size:16px}
+.price{font-weight:bold;color:#087443;font-size:18px}
+button{border:0;border-radius:7px;padding:11px;background:#153d70;color:white;font-weight:bold;cursor:pointer}
+footer{text-align:center;background:#10233f;color:white;padding:22px}
+@media(min-width:600px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header>
+<h1>🛒 TechTrolley</h1>
+<p>Your Mobile Accessories Store</p>
+</header>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
+<section class="hero" id="home">
+<h2>Smart Accessories. Smart Prices.</h2>
+<p>Apne phone ke liye behtareen accessories dekhein!</p>
+<input class="search" id="search" placeholder="Product search karein..." oninput="filterProducts()">
+</section>
+<section class="products" id="products">
+<div class="card" data-name="mobile stand"><div class="pic">📱</div><h3>Mobile Stand</h3><p class="price">Rs. 299</p><button onclick="order('Mobile Stand',299)">Order on WhatsApp</button></div>
+<div class="card" data-name="phone cover"><div class="pic">📲</div><h3>Phone Cover</h3><p class="price">Rs. 299</p><button onclick="order('Phone Cover',299)">Order on WhatsApp</button></div>
+<div class="card" data-name="charging cable"><div class="pic">🔌</div><h3>Charging Cable</h3><p class="price">Rs. 349</p><button onclick="order('Charging Cable',349)">Order on WhatsApp</button></div>
+<div class="card" data-name="earphones"><div class="pic">🎧</div><h3>Wired Earphones</h3><p class="price">Rs. 499</p><button onclick="order('Wired Earphones',499)">Order on WhatsApp</button></div>
+<div class="card" data-name="ring holder"><div class="pic">⭕</div><h3>Phone Ring Holder</h3><p class="price">Rs. 199</p><button onclick="order('Phone Ring Holder',199)">Order on WhatsApp</button></div>
+<div class="card" data-name="cable organizer"><div class="pic">🔗</div><h3>Cable Organizer</h3><p class="price">Rs. 229</p><button onclick="order('Cable Organizer',229)">Order on WhatsApp</button></div>
+</section>
+<footer id="contact">
+<h3>TechTrolley</h3>
+<p>Mobile Accessories | Pakistan</p>
+<p>Order ke liye WhatsApp set up karna abhi baqi hai.</p>
+</footer>
+<script>
+function filterProducts(){
+let q=document.getElementById('search').value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.dataset.name.includes(q)?'block':'none';
+});
+}
+function order(product,price){
+alert('WhatsApp number aglay step mein set hoga. Product: '+product+' - Rs. '+price);
+}
+</script>
+</body>
+</html>
